@@ -6,31 +6,36 @@ import knobData from "./button.knobs.json";
 const { icon, innerText } = knobData;
 
 export const basicButton = () => (
-    <Button>{text("Button text", "Basic button")}</Button>
+    <Button>{text(innerText.label, innerText.default, innerText.group)}</Button>
 );
-
 export const secondaryButton = () => (
-    <Button variant="secondary">Secondary Button</Button>
+    <Button variant="secondary">
+        {text(innerText.label, "Secondary button", innerText.group)}
+    </Button>
 );
-
 export const tertiaryButton = () => (
-    <Button variant="tertiary">Tertiary Button</Button>
+    <Button variant="tertiary">
+        {text(innerText.label, "Tertiary button", innerText.group)}
+    </Button>
 );
-
 export const iconButton = () => (
-    <Button icon={select(icon.label, icon.options, icon.default, icon.group)}>{text("Button text", "Basic button")}</Button>
+    <Button icon={select(icon.label, icon.options, icon.default, icon.group)}>
+        {text(innerText.label, "Icon button", innerText.group)}
+    </Button>
 );
-
 export const functionButton = () => (
-    <Button onClick={() => alert('Hello')}>Function Button</Button>
+    <Button onClick={() => alert('Hi')}>
+        {text(innerText.label, "Function button", innerText.group)}
+    </Button>
 );
-
 export const linkedButton = () => (
-    <Button href="/route">Linked Button</Button>
+    <Button href="/route">
+        {text(innerText.label, "Link button", innerText.group)}
+    </Button>
 );
 
 export default {
     component: Button,
     decorators: [withKnobs],
-    title: "Button"
+    title: "Atoms|Button"
 };
