@@ -1,8 +1,12 @@
 import React from 'react';
-import Button from './button'
+import Button from './button';
+import { withKnobs, text, select } from "@storybook/addon-knobs";
+
+import knobData from "./button.knobs.json";
+const { icon, innerText } = knobData;
 
 export const basicButton = () => (
-    <Button>My basic Button</Button>
+    <Button>{text("Button text", "Basic button")}</Button>
 );
 
 export const secondaryButton = () => (
@@ -14,7 +18,7 @@ export const tertiaryButton = () => (
 );
 
 export const iconButton = () => (
-    <Button icon="user">My basic Button</Button>
+    <Button icon={select(icon.label, icon.options, icon.default, icon.group)}>{text("Button text", "Basic button")}</Button>
 );
 
 export const functionButton = () => (
@@ -27,5 +31,6 @@ export const linkedButton = () => (
 
 export default {
     component: Button,
+    decorators: [withKnobs],
     title: "Button"
 };

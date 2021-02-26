@@ -7,6 +7,7 @@ const buttonBackground = props => {
 	if (!props.variant) return props.theme.primary;
 
 	// Dynamically determine the background colour based on props
+	// let colour;
 	let colour;
 	switch (props.variant) {
 		case "primary":

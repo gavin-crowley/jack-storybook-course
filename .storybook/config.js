@@ -1,5 +1,6 @@
-import { addDecorator, configure } from "@storybook/react";
 import React from 'react';
+import { addDecorator, configure } from "@storybook/react";
+// import { withKnobs } from "@storybook/addon-knobs";
 import { ThemeProvider } from 'styled-components';
 
 import themeDefault from '../components/particles/themeDefault';
@@ -18,3 +19,4 @@ const GlobalWrapper = storyFn => (
 )
 
 addDecorator(GlobalWrapper);
+// addDecorator(withKnobs);
