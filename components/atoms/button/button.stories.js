@@ -2,7 +2,19 @@ import React from 'react';
 import Button from './button'
 
 export const basicButton = () => (
-    <Button variant="secondary">My basic Button</Button>
+    <Button>My basic Button</Button>
+);
+
+export const secondaryButton = () => (
+    <Button variant="secondary">Secondary Button</Button>
+);
+
+export const tertiaryButton = () => (
+    <Button variant="tertiary">Tertiary Button</Button>
+);
+
+export const iconButton = () => (
+    <Button icon="user">My basic Button</Button>
 );
 
 export const functionButton = () => (
